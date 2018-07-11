@@ -19,7 +19,7 @@ def main():
     counter = 0
     print("ciphertext: ", end="")
     for i in range(0, len(plaintext)):
-        if (plaintext[i].isalpha()):
+        if isalpha(plaintext[i]):
             counterKey = counter % len(keyWord)
             key = 0
             if keyWord[counterKey].isupper():
@@ -35,6 +35,8 @@ def main():
             else:
                 # plaintext[i] = 97 + (plaintext[i] - 97 + key) % 26
                 print(chr(97 + (ord(plaintext[i]) - 97 + key) % 26), end="")
+        else:
+            print(plaintext[i], end="")
 
             counter += 1
     print()
